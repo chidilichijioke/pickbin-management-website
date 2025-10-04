@@ -3,7 +3,7 @@
       "version": "0.1.0",
       "private": true,
       "type": "module",
-      "homepage": "https://colilabs.github.io/pickbin-management-website",
+      "homepage": "https://colilabs.github.io/pickbin/",
       "dependencies": {
             "@radix-ui/react-accordion": "^1.2.3",
             "@radix-ui/react-alert-dialog": "^1.1.6",
