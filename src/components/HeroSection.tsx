@@ -3,6 +3,7 @@
 import { Button } from './ui/button';
 import { motion } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import truckImg from './assets/pick_bin_truck.png';
 
 interface HeroSectionProps {
   onNavigateToAbout?: () => void;
@@ -61,7 +62,7 @@ export function HeroSection({ onNavigateToAbout, onNavigateToSchedulePickup }: H
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <ImageWithFallback
-                src="src/components/assets/pick&bin truck.png"
+                src={truckImg}
                 alt="Eco-friendly waste management truck"
                 className="w-full h-[400px] lg:h-[500px] object-cover"
               />
