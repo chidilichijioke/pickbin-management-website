@@ -4,7 +4,5 @@
   functions = "netlify/functions"
 
 [dev]
-  command = "npm run dev"
-  port = 3000
   functions = "netlify/functions"
 
