@@ -4,6 +4,8 @@ import { motion } from 'motion/react';
 import { Target, Eye, Heart, Users, Truck, Recycle, Shield, ArrowLeft } from 'lucide-react';
 import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import workersImg from './assets/pb_workers.png';
+import cleanupImg from './assets/pb_cleanup.png';
 
 interface AboutPageProps {
   onNavigateHome: () => void;
@@ -93,7 +95,7 @@ export function AboutPage({ onNavigateHome, onNavigateToSchedulePickup }: AboutP
             >
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <ImageWithFallback
-                  src="src/components/assets/pb_workers.png"
+                  src={workersImg}
                   alt="Team collaboration"
                   className="w-full h-[400px] object-cover"
                 />
@@ -238,7 +240,7 @@ export function AboutPage({ onNavigateHome, onNavigateToSchedulePickup }: AboutP
             >
               <div className="rounded-2xl overflow-hidden shadow-xl">
                 <ImageWithFallback
-                  src="src/components/assets/pb_cleanup.png"
+                  src={cleanupImg}
                   alt="Sustainability and recycling"
                   className="w-full h-[400px] object-cover"
                 />

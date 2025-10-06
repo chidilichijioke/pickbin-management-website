@@ -1,6 +1,6 @@
 'use client';
 
-import Logo from "./assets/pick&binlogo.png"; 
+import Logo from "./assets/pick_bin_logo.png"; 
 import { useState } from 'react';
 import { Button } from './ui/button';
 import {
