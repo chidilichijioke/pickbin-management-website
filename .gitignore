@@ -40,3 +40,6 @@ bower_components/
 *.key
 *.crt
 *.pid
+
+# Local Netlify folder
+.netlify
