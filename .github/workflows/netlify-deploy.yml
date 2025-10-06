@@ -8,19 +8,21 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Use Node.js 18
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: 18
+          cache: npm
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
+      - name: Build project
         run: npm run build
 
       - name: Install Netlify CLI
@@ -31,5 +33,5 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: |
-          # Deploy the build output directory to Netlify (production)
-          netlify deploy --dir=build --prod --site=$NETLIFY_SITE_ID
+          # Deploy build output folder to Netlify
+          netlify deploy --prod --dir=build --site=$NETLIFY_SITE_ID
