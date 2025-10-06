@@ -62,29 +62,28 @@ export function SchedulePickup({ onNavigateHome }: SchedulePickupProps) {
     setConfirmation(null);
 
     try {
-      const formData = new FormData();
 
-      // append text fields
-      Object.entries(form).forEach(([key, value]) => {
-        if (key !== 'wastePhoto' && value) {
-          formData.append(key, value as string);
-        }
-      });
+      // Prepare payload — only include the fields required by the email function
+      const payload = {
+        name: form.name,
+        email: form.email,
+        address: `${form.address}, ${form.city}, ${form.state}`,
+        message: `Preferred pickup date: ${form.pickupDate}\nWaste type: ${form.wasteType}\nPayment: ${form.paymentMethod}\nNotes: ${form.additionalNotes || ''}`
+      };
 
-      // append file
-      if (form.wastePhoto) {
-        formData.append('wastePhoto', form.wastePhoto);
-      }
-
-      const res = await fetch('http://localhost:5000/api/pickup', {
+  const base = typeof import.meta !== 'undefined' ? (import.meta.env?.VITE_FUNCTIONS_BASE || '') : '';
+  const endpoint = (base || '') + '/.netlify/functions/send-pickup';
+      const res = await fetch(endpoint, {
         method: 'POST',
-        body: formData,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
       });
 
       const data = await res.json();
 
       if (res.ok) {
-        setConfirmation(`Pickup scheduled successfully! Reference ID: ${data.id}`);
+        toast.success('Pickup request sent! We will contact you shortly.');
+        setConfirmation('Pickup scheduled successfully!');
         setForm({
           name: '',
           email: '',
@@ -99,7 +98,7 @@ export function SchedulePickup({ onNavigateHome }: SchedulePickupProps) {
           wastePhoto: null,
         });
       } else {
-        toast.error(data.error || 'Something went wrong!');
+        toast.error(data?.error || 'Something went wrong!');
       }
     } catch (error) {
       toast.error('Network error!');
