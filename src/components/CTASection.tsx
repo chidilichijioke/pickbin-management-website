@@ -58,10 +58,10 @@ export function CTASection() {
                 <Phone className="w-5 h-5 mr-2" />
                 0203 488 3249
               </a>
-              {/* <a href="mailto:emmanueljejeniwa1@gmail.com" className="flex items-center text-green-100 hover:text-white transition-colors font-montserrat">
+              <a href="mailto:hello@pickbin.org" className="flex items-center text-green-100 hover:text-white transition-colors font-montserrat">
                 <Mail className="w-5 h-5 mr-2" />
-                emmanueljejeniwa1@gmail.com
-              </a> */}
+                hello@pickbin.org
+              </a> 
             </div>
           </motion.div>
 

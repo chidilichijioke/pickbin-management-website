@@ -210,7 +210,7 @@ export function FAQSection({ showBackButton = false, onBack }: FAQSectionProps) 
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button className="bg-green-600 hover:bg-green-700 text-white font-montserrat">
-            <a href="mailto:emmanueljejeniwa1@gmail.com">Contact Support</a>
+            <a href="mailto:hello@pickbin.org">Contact Support</a>
           </Button>
         </div>
       </motion.div>
