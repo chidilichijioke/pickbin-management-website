@@ -18,16 +18,11 @@ jobs:
         with:
           node-version: 18
           cache: npm
-      - name: Use Node.js 18
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
 
       - name: Install dependencies
         run: npm ci
 
       - name: Build project
-      - name: Build
         run: npm run build
 
       - name: Install Netlify CLI
@@ -38,7 +33,5 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: |
-          # Deploy build output folder to Netlify
-          netlify deploy --prod --dir=build --site=$NETLIFY_SITE_ID
           # Deploy the build output directory to Netlify (production)
           netlify deploy --dir=build --prod --site=$NETLIFY_SITE_ID
