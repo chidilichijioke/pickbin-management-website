@@ -283,7 +283,7 @@ export function AboutPage({ onNavigateHome, onNavigateToSchedulePickup }: AboutP
                 </svg>
               </div>
               <h3 className="font-semibold text-gray-900 font-montserrat mb-2">Email</h3>
-              <p className="text-gray-600 font-montserrat">emmanueljejeniwa1@gmail.com</p>
+              <p className="text-gray-600 font-montserrat">hello@pickbin.org</p>
             </div>
 
             <div className="bg-white rounded-xl p-8 shadow-sm">
@@ -303,7 +303,7 @@ export function AboutPage({ onNavigateHome, onNavigateToSchedulePickup }: AboutP
                 </svg>
               </div>
               <h3 className="font-semibold text-gray-900 font-montserrat mb-2">Website</h3>
-              <p className="text-gray-600 font-montserrat">www.pickandbin.com</p>
+              <p className="text-gray-600 font-montserrat">www.pickbin.org</p>
             </div>
           </motion.div>
         </div>

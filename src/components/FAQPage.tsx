@@ -200,12 +200,12 @@ export function FAQSection({ onNavigateHome }: FAQPageProps) {
               >
                 Contact Support
               </Button>
-              {/* <Button 
+              <Button 
                 variant="outline" 
                 className="border-green-600 text-green-600 hover:bg-green-50 font-montserrat"
               >
-                Email: support@pickandbin.com
-              </Button> */}
+                Email: hello@pickbin.org
+              </Button> 
             </div>
           </motion.div>
         </div>

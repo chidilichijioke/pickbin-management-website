@@ -42,7 +42,7 @@ export function Footer({ onNavigateToAbout, onNavigateToFAQ }: FooterProps) {
               </div>
               <div className="flex items-center text-gray-300">
                 <Mail className="w-5 h-5 mr-3 text-green-400" />
-                <span className="font-montserrat">emmanueljejeniwa1@gmail.com</span>
+                <span className="font-montserrat">hello@pickbin.org</span>
               </div>
               <div className="flex items-center text-gray-300">
                 <MapPin className="w-5 h-5 mr-3 text-green-400" />
